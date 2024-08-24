@@ -47,23 +47,23 @@ const playRound = () => {
 };
 
 // Function to play the game for 5 rounds and determine the overall winner
-const playGame = () => {
-  for (let i = 0; i < 5; i++) {
-    playRound();
-  }
+// const playGame = () => {
+//   for (let i = 0; i < 5; i++) {
+//     playRound();
+//   }
 
-  if (scores.computer > scores.human) {
-    console.log(
-      `The computer wins with a score of ${scores.computer} to ${scores.human}.`
-    );
-  } else if (scores.human > scores.computer) {
-    console.log(
-      `You win with a score of ${scores.human} to ${scores.computer}!`
-    );
-  } else {
-    console.log(`It's a tie! Both scored ${scores.human}.`);
-  }
-};
+//   if (scores.computer > scores.human) {
+//     console.log(
+//       `The computer wins with a score of ${scores.computer} to ${scores.human}.`
+//     );
+//   } else if (scores.human > scores.computer) {
+//     console.log(
+//       `You win with a score of ${scores.human} to ${scores.computer}!`
+//     );
+//   } else {
+//     console.log(`It's a tie! Both scored ${scores.human}.`);
+//   }
+// };
 
 // Start the game
 playGame();
