@@ -1,5 +1,6 @@
-alert("To play Rock Paper Scissors, open the console.");
-
+const container = document.querySelector(".container")
+const buttons = document.querySelectorAll("button")
+const results = document.querySelector(".results")
 // Available choices for the game
 const choices = ["rock", "paper", "scissors"];
 
@@ -10,11 +11,8 @@ const getRandomChoice = () => {
 };
 
 // Function to get the user's choice
-const getHumanChoice = () => {
-  let choice;
-  do {
-    choice = prompt("Type rock, paper, or scissors: ").toLowerCase();
-  } while (!choices.includes(choice)); // Repeat until a valid choice is entered
+const getHumanChoice = (e) => {
+  let choice = e.target.id
   return choice;
 };
 
@@ -25,9 +23,9 @@ let scores = {
 };
 
 // Function to play a single round
-const playRound = () => {
+const playRound = (e) => {
   const computerChoice = getRandomChoice();
-  const humanChoice = getHumanChoice();
+  const humanChoice = getHumanChoice(e);
 
   if (computerChoice === humanChoice) {
     console.log("It's a tie!");
@@ -45,6 +43,12 @@ const playRound = () => {
     scores.human++;
   }
 };
+
+
+buttons.forEach(addEventListener("click", (e) => {
+  playRound(e)
+}))
+
 
 // Function to play the game for 5 rounds and determine the overall winner
 // const playGame = () => {
